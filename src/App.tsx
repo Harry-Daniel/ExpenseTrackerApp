@@ -1,9 +1,11 @@
 import React from 'react'
+import ExpenseList from './components/ExpenseList'
 
 function App () {
   return (
-    <div><p>
-      Hello World</p></div>
+    <div>
+      <ExpenseList/>
+    </div>
   )
 }
 
