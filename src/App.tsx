@@ -11,10 +11,8 @@ function App () {
 
   const [Expenses,setExpenses]=useState([
     
-    {id: 1 , description: 'aaa', amount: 10, category: 'Utility'},
-    {id: 2 , description: 'bbb', amount: 10, category: 'Utility'},
-    {id: 3 , description: 'ccc', amount: 10, category: 'Utility'},
-    {id: 4 , description: 'ddd', amount: 10, category: 'Utility'},
+    {id: 1 , description: 'Just an Example', amount: 0, category: 'Utility'},
+    
  ]);
 
 
@@ -24,9 +22,12 @@ function App () {
 
     
   return (<>
+      <div className="mb-5">
 
-      <div className="mb-3">
-        <ExpenseForm/>
+      </div>
+
+      <div className="mb-5">
+        <ExpenseForm onSubmit={expense=>setExpenses([...Expenses,{...expense,id :Expenses.length+1}])}/>
 
       </div>
 

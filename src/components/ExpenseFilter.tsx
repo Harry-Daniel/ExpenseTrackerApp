@@ -7,10 +7,13 @@ interface Props{
 
 const ExpenseFilter = ({onSelectCategory}:Props) => {
   return (
-
+    <>
+    <p className='fw-bold'>
+        Filter Expenses by:
+    </p>
     <select className='form-select' onChange={(event)=>onSelectCategory(event.target.value)}>
         <option value="">All Categories</option>
-        {categories.map(category=> <option value={category}>
+        {categories.map(category=> <option key={category} value={category}>
             {category}
         </option>)}
 
@@ -20,7 +23,9 @@ const ExpenseFilter = ({onSelectCategory}:Props) => {
 
 
     </select>
+    </>
   )
+  
 }
 
 export default ExpenseFilter
